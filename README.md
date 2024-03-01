@@ -16,7 +16,7 @@ After releasing a new version to github the latest version should be included he
 
 Download the latest verion's .tar.gz file for both ARM and AMD, then run:
 
-`shasum -256 path_to_build.tar.gz`
+`shasum -a 256 path_to_build.tar.gz`
 
 Update `anypay.rb` with the latest BUILD_VERSION variable and manually set both its `sha256`
 with the correct hashes.
