@@ -11,7 +11,6 @@ class Walletbot < Formula
   # For ARM architecture
   on_arm do
     url "https://github.com/anypay/wallet-bot/releases/download/#{BUILD_VERSION}/walletbot-#{BUILD_VERSION}-macos-arm64"\
-     https://github.com/anypay/wallet-bot/releases/download/0.0.7/walletbot-0.0.7-macos-arm64
     sha256 ARM_SHASUM_256
   end
 
