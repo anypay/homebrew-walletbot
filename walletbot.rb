@@ -20,7 +20,7 @@ class Walletbot < Formula
       mv "walletbot-#{BUILD_VERSION}-macos-arm64", "walletbot"
     end
 
-    on_amd64 do
+    on_intel do
 
       mv "walletbot-#{BUILD_VERSION}-macos-x64", "walletbot"
     end
