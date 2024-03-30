@@ -1,4 +1,4 @@
-# Anypay Homebrew
+# Wallet Bot Homebrew
 
 ```
 brew tap anypay/walletbot
