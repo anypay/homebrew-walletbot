@@ -15,6 +15,18 @@ class Walletbot < Formula
   end
 
   def install
+
+    on_arm do
+      mv "walletbot-#{BUILD_VERSION = "1.6.0"
+      }-macos-arm64", "walletbot"
+    end
+
+    on_amd64 do
+
+      mv "walletbot-#{BUILD_VERSION = "1.6.0"
+      }-macos-x64", "walletbot"
+    end
+    
     bin.install "walletbot" => "walletbot"
   end
 
