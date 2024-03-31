@@ -1,28 +1,31 @@
-BUILD_VERSION = "1.6.0"
-AMD_SHASUM_256 = "df0d20808819a4c4b47b202153aee0c4165368f4b06d8ca75b293bdf67f6ca9b"
-ARM_SHASUM_256 = "8605da484ded93433fbc2804f59d9b7542356c8879b637232f4609f787850b29"
+BUILD_VERSION = "v1.7.0"
+AMD_SHASUM_256 = "366c0e26c6cb7b485f75996b735798a331a00348baed629f3a68fdb27a1ecb3b"
+ARM_SHASUM_256 = "65b39471f6fbe53d65f31194361db4cbf15b5254cb205067820ce9cdd71f8684"
 
 class Walletbot < Formula
   desc "Your Money-Sending Robot Friend"
-  homepage "https://github.com/anypay/wallet-bot"
-  url "https://github.com/anypay/wallet-bot/releases/download/#{BUILD_VERSION}/walletbot-#{BUILD_VERSION}-macos-x64"
-  sha256 AMD_SHASUM_256
+  homepage "https://github.com/anypay/walletbot"
 
   # For ARM architecture
   on_arm do
-    url "https://github.com/anypay/wallet-bot/releases/download/#{BUILD_VERSION}/walletbot-#{BUILD_VERSION}-macos-arm64"
+    url "https://github.com/anypay/walletbot/releases/download/#{BUILD_VERSION}/walletbot-macos-arm64"
     sha256 ARM_SHASUM_256
+  end
+
+  on_intel do
+    url "https://github.com/anypay/walletbot/releases/download/#{BUILD_VERSION}/walletbot-macos-x64"
+    sha256 AMD_SHASUM_256
   end
 
   def install
 
     on_arm do
-      mv "walletbot-#{BUILD_VERSION}-macos-arm64", "walletbot"
+      mv "walletbot-macos-arm64", "walletbot"
     end
 
     on_intel do
 
-      mv "walletbot-#{BUILD_VERSION}-macos-x64", "walletbot"
+      mv "walletbot-macos-x64", "walletbot"
     end
     
     bin.install "walletbot" => "walletbot"
